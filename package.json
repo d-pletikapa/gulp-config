@@ -1,0 +1,22 @@
+{
+  "name": "gulp-config",
+  "version": "1.0.0",
+  "description": "startup gulp configuration for personal use.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "config"
+  ],
+  "author": "Denis Pl.",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "del": "^7.0.0",
+    "gulp": "^4.0.2",
+    "gulp-cssimport": "^7.0.0"
+  }
+}
