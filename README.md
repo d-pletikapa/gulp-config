@@ -26,6 +26,7 @@ npm i gulp -D
 
 <details>
 <summary>длинный код</summary>
+
 ```js
 import gulp from 'gulp';
 
@@ -142,7 +143,9 @@ export const base = gulp.parallel(html, css, js, copy);
 export const build = gulp.series(clear, base);
 
 export default gulp.series(base, server);
+
 ```
+
 </details>
 
 ### run gulp (export default):
