@@ -2,11 +2,11 @@ import gulp from 'gulp';
 import browserSync from 'browser-sync';
 import gulpCssimport from 'gulp-cssimport';
 import {deleteAsync} from 'del';
-import sassPkg from 'sass';
+import * as sassPkg from 'sass';
 import gulpSass from 'gulp-sass';
 
 
-const prerocessUse = true;
+const preProcessUse = true;
 const sass = gulpSass(sassPkg);
 //tasks
 export const html = () => gulp
@@ -15,7 +15,7 @@ export const html = () => gulp
   .pipe(browserSync.stream());
 
 export const style = () => {
-    if (prerocessUse) {
+    if (preProcessUse) {
       return gulp
       .src('src/scss/**/*.scss')
       .pipe(sass().on('error', sass.logError))
@@ -57,10 +57,11 @@ export const server = () => {
     // tunnel: true,
     server: {
       baseDir: 'dist'
-    }
+    },
+    browser: ['msedge',],
   })
   gulp.watch('./src/**/*.html', html);
-  gulp.watch(prerocessUse ? './src/scss/**/*.scss' : './src/css/**/*.ccss', style);
+  gulp.watch(preProcessUse ? './src/scss/**/*.scss' : './src/css/**/*.ccss', style);
   gulp.watch('./src/js/**/*.js', js);
   gulp.watch([
     './src/fonts/**/*',
